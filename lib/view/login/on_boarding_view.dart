@@ -1,8 +1,11 @@
 import 'package:fitness/common/color_extension.dart';
-import 'package:fitness/common/round_button.dart';
+import 'package:fitness/view/login/signup_page.dart';
+import 'package:fitness/view/login/step1_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../common_widget/round_button.dart';
 
 class OneBoardingView extends StatefulWidget {
   const OneBoardingView({super.key});
@@ -128,7 +131,13 @@ class _OneBoardingViewState extends State<OneBoardingView> {
                       const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                   child: RoundButton(
                     title: "Start",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
+                          (route) => false);
+                    },
+                    type: RoundButtonType.primayText,
                   ),
                 ),
                 SizedBox(
