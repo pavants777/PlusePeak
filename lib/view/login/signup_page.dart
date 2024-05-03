@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
+import 'package:fitness/common/color_extension.dart';
 import 'package:fitness/view/login/login_page.dart';
 import 'package:fitness/view/login/step1_view.dart';
-import 'package:flutter/material.dart';
-import 'package:fitness/common/color_extension.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -19,128 +20,93 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: TColor.white,
       body: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(),
-        child: Stack(
+        child: Column(
           children: [
-            Image.asset(
-              'assets/img/on_board_bg.png',
-              width: media.width,
-              height: media.height,
-              fit: BoxFit.cover,
-            ),
-            SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 40),
-                  Text(
-                    "Sign Up",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: TColor.primaryText,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  _buildTextField("Username", _usernameController),
-                  SizedBox(height: 20),
-                  _buildTextField("Email", _emailController),
-                  SizedBox(height: 20),
-                  _buildTextField("Password", _passwordController,
-                      isPassword: true),
-                  SizedBox(height: 20),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Implement signup functionality
-                      // just for refrence
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Step1View()));
-                    },
-                    child: Text("Sign Up"),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    "------OR------",
-                    style: TextStyle(
-                      color: TColor.primaryText,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text("I Have An Account?"),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignInPage()));
-                        },
-                        child: const Text(
-                          ' Log In',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Image.asset(
-                        'assets/img/01.webp',
-                        width: 40,
-                        height: 40,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Image.asset(
-                        'assets/img/download (1).png',
-                        width: 40,
-                        height: 40,
-                      ),
-                    ),
-                  ]),
-                ],
+            SizedBox(height: media.width * 0.3),
+            Text(
+              "Sign Up",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: TColor.primary,
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
               ),
             ),
-            Positioned(
-              bottom: 20,
-              left: 0,
-              right: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [1, 2].map((pObj) {
-                  return Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    width: 12,
-                    height: 12,
-                    decoration: BoxDecoration(
-                      color: 1 == pObj
-                          ? TColor.white
-                          : TColor.gray.withOpacity(0.7),
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                  );
-                }).toList(),
+            SizedBox(height: 20),
+            _buildTextField("Username", _usernameController),
+            SizedBox(height: 20),
+            _buildTextField("Email", _emailController),
+            SizedBox(height: 20),
+            _buildTextField("Password", _passwordController, isPassword: true),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Implement signup functionality
+                // For reference
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Step1View()));
+              },
+              child: Text("Sign Up"),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "------OR------",
+              style: TextStyle(
+                color: TColor.primaryText,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
               ),
             ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "I Have An Account?",
+                  style: TextStyle(color: TColor.primary),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignInPage()));
+                  },
+                  child: const Text(
+                    ' Log In',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              GestureDetector(
+                onTap: () {},
+                child: Image.asset(
+                  'assets/img/01.webp',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              const SizedBox(
+                width: 40,
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Image.asset(
+                  'assets/img/download (1).png',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+            ]),
           ],
         ),
       ),
@@ -156,12 +122,12 @@ class _SignUpPageState extends State<SignUpPage> {
         obscureText: isPassword,
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: TextStyle(color: TColor.primaryText),
+          labelStyle: TextStyle(color: TColor.primary),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: TColor.primaryText),
+            borderSide: BorderSide(color: TColor.primary),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: TColor.primaryText.withOpacity(0.5)),
+            borderSide: BorderSide(color: TColor.primary.withOpacity(0.5)),
           ),
         ),
       ),
