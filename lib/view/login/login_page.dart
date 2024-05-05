@@ -50,8 +50,10 @@ class _SignInPageState extends State<SignInPage> {
                 // Implement sign-in functionality
                 // just for reference
 
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Step1View()));
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => Step1View()),
+                    (route) => false);
               },
               child: Text("Sign In"),
             ),

@@ -1,4 +1,5 @@
 import 'package:fitness/view/login/on_boarding_view.dart';
+import 'package:fitness/view/menu/menu_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: OneBoardingView(),
+      home: MenuView(),
     );
   }
 }

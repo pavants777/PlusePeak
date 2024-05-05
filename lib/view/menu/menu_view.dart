@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:fitness/common/color_extension.dart';
 import 'package:fitness/common_widget/menu_call.dart';
 import 'package:fitness/common_widget/plan_row.dart';
+import 'package:fitness/view/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -292,10 +293,10 @@ class _MenuViewState extends State<MenuView> {
               onPressed: () {
                 switch (mObj["tag"].toString()) {
                   case "1":
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const HomeView()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeView()));
                     break;
                   case "2":
                     //  Navigator.push(
