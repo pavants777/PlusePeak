@@ -2,6 +2,7 @@ import 'package:fitness/view/login/on_boarding_view.dart';
 import 'package:fitness/view/menu/menu_view.dart';
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(MyApp());
 }
