@@ -1,7 +1,7 @@
 <h1>PlusePeak Fitness App</h1>
 
 A new Flutter project.
-
+<h4>Project Information updated soon </h4>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
